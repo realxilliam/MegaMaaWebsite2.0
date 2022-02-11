@@ -11,3 +11,6 @@
     max-width: 30rem;
     margin: 0 auto;
 }
+html {
+    background-image: url("../imgs/background.png");
+}
