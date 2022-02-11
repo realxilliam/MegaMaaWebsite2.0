@@ -3,18 +3,33 @@
 <head>
     <script src="https://kit.fontawesome.com/8f55ad84de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/css/bulma-carousel.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaMaa | Koti</title>
-    <script src="/assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
+    <script>
+        MinecraftAPI.getServerStatus('megamaa.com', {
+            port: 25565 // optional, only if you need a custom port
+        }, function (err, status) {
+            if (err) {
+                return document.querySelector('.server-status').innerHTML = 'Error loading status';
+            }
+
+            // you can change these to your own message!
+            document.querySelector('.server-online').innerHTML = status.online ? 'up' : 'down';
+        });
+    </script>
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://megamaa.com">
-            <img src="/assets/imgs/logo.png" width="" height="">
+            <img src="assets/imgs/logo.png" width="" height="">
           </a>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -76,12 +91,9 @@
               <h1>MegaMaa</h1>
           </div>
           <div class="is-flex is-justify-content-center is-size-3">
-            <h1>Kiva suomalainen palvelin</h1>
-          </div>
-          <div class="is-flex is-justify-content-center is-size-1">
-            <img src="/assets/imgs/mc_lobby.png" alt="Lobby Screenshot">
-            <img src="/assets/imgs/mc_parkour.png" alt="Parkour Screenshot">
-            <img src="/assets/imgs/mc_survival.png" alt="Survival screenshot">
+            <div class="server-status">
+              My awesome server is currently <span class="server-online"></span>!
+            </div>
           </div>
       </div>
 </body>
