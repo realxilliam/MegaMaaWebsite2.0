@@ -14,3 +14,7 @@
 html {
     background-image: url("../imgs/background.png");
 }
+
+.mcmulti {
+    right: -100px;
+};
