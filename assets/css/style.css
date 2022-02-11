@@ -1,0 +1,13 @@
+.server-status span{
+    color: #4286f4;
+}
+.siemaimg {
+    width: 100%;
+}
+  
+.siema {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+}

@@ -21,4 +21,21 @@ $(document).ready(()=>{
       });
     }, 500);
   });
-  
+/* Minecraft server players end */
+
+
+/* Siema carousel */
+$(document).ready(function() {
+    const mySiema = new Siema({
+      selector: '.siema',
+      duration: 10,
+      loop: true,
+    });
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    
+    prev.addEventListener('click', () => mySiema.prev());
+    next.addEventListener('click', () => mySiema.next());
+    
+  });
+/* Siema carousel end */
