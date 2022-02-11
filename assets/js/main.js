@@ -1,2 +1,24 @@
-const obj = JSON.parse("https://api.minetools.eu/query/megamaa.com/25565")
-console.log(obj.players.now)
+/* Minecraft server players */
+$(document).ready(()=>{
+    const ip = $(".sip").attr("data-ip");
+    const port = $(".sip").attr("data-port");
+  
+    $.get(`https://mcapi.us/server/status?ip=${ip}&port=${port}`, (result)=>{
+      if (result.online) {
+        $(".sip").html(result.players.now);
+      } else {
+        $(".playercount").html("Server isn't online!");
+      }
+    });
+  
+    setInterval(()=>{
+      $.get(`https://mcapi.us/server/status?ip=${ip}&port=${port}`, (result)=>{
+        if (result.online) {
+          $(".sip").html(result.players.now);
+        } else {
+          $(".playercount").html("Server isn't online!");
+        }
+      });
+    }, 500);
+  });
+  
