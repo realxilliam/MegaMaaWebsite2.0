@@ -18,3 +18,7 @@ html {
 .mcmulti {
     right: -100px;
 };
+
+i {
+    content:”\00A3″; font-family: “FontAwesome”; font-weight: normal; 
+}

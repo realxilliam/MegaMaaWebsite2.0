@@ -87,3 +87,11 @@ $(document).ready(function(){
     });
   });
 /* IP copy end */
+
+/* Redirect Function */
+
+function redirectdiscord(){
+  window.location.href = "https://discord.gg/mp6XzgmMwg";
+}
+
+/* Redirect Function end */
